@@ -54,8 +54,29 @@ function DonutMaster() {
   //function to display shop name, donuts per hour and donuts per day
   this.generateReport = function () {
     for (var i = 0; i < printArray.length; i++) {
-        alert(printArray[i].location + " Donuts per hour: " + printArray[i].donutsPerHourArray + "    Donuts per day: " + printArray[i].donutsPerDay);
+
+        $("tbody").append("<tr id='" + i + "'></tr>");
+        $("#" + i).append("<td>" + printArray[i].location + "</td>");
     }
+
+    for (var i = 0; i < printArray.length; i++) {
+
+        $("tbody").append("<tr id='" + i + "'></tr>");
+        $("#" + i).append("<td>" + printArray[i].hoursOpen + "</td>");
+    }
+
+        for (var i = 0; i < printArray.length; i++) {
+
+        $("tbody").append("<tr id='" + i + "'></tr>");
+        $("#" + i).append("<td>" + printArray[i].hourlyAverage + "</td>");
+    }
+
+        for (var i = 0; i < printArray.length; i++) {
+
+        $("tbody").append("<tr id='" + i + "'></tr>");
+        $("#" + i).append("<td>" + printArray[i].donutsPerDay + "</td>");
+    }
+
   };
 
   //method to add a new shop to the current list of shops and their parameters.  This is LOCAL ONLY, does not change values in the rest of the script
@@ -82,34 +103,6 @@ function DonutMaster() {
 
 }
 
-//create a function to populate the table with real time data
-function generateTable() {
-  //downtown
-  document.getElementById("downtownHours").innerHTML=downtown.hoursOpen;
-  document.getElementById("downtownDonutsPerHour").innerHTML=downtown.hourlyAverage;
-  document.getElementById("downtownDonutsPerDay").innerHTML=downtown.donutsPerDay;
-
-  //capitol hill
-  document.getElementById("capitolHillHours").innerHTML=capitolHill.hoursOpen;
-  document.getElementById("capitolHillDonutsPerHour").innerHTML=capitolHill.hourlyAverage;
-  document.getElementById("capitolHillDonutsPerDay").innerHTML=capitolHill.donutsPerDay;
-
-  //south lake union
-  document.getElementById("sluHours").innerHTML=southLakeUnion.hoursOpen;
-  document.getElementById("sluDonutsPerHour").innerHTML=southLakeUnion.hourlyAverage;
-  document.getElementById("sluDonutsPerDay").innerHTML=southLakeUnion.donutsPerDay;
-
-  //wedgewood
-  document.getElementById("wedgewoodHours").innerHTML=wedgewood.hoursOpen;
-  document.getElementById("wedgewoodDonutsPerHour").innerHTML=wedgewood.hourlyAverage;
-  document.getElementById("wedgewoodDonutsPerDay").innerHTML=wedgewood.donutsPerDay;
-
-  //ballard
-  document.getElementById("ballardHours").innerHTML=ballard.hoursOpen;
-  document.getElementById("ballardDonutsPerHour").innerHTML=ballard.hourlyAverage;
-  document.getElementById("ballardDonutsPerDay").innerHTML=ballard.donutsPerDay;
-}
-
 //create shop opbjects
 var downtown = new Shop("Downtown", 8, 43, 4.5, 24);
 var capitolHill = new Shop("Capitol Hill", 4, 37, 2, 10);
@@ -120,9 +113,6 @@ var printArray = [downtown, capitolHill, southLakeUnion, wedgewood, ballard];
 
 //create manager object
 var managerBob = new DonutMaster();
-
-//call function to generate table
-generateTable();
 
 //print detailed information to the console
 for (var i = 0; i < printArray.length; i++) {

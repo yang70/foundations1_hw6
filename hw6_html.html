@@ -3,7 +3,7 @@
 
   <head>
     <title>Donut Shop - Homework 5</title>
-    <link type="text/css" rel="stylesheet" href="hw5_stylesheet.css"/>
+    <link type="text/css" rel="stylesheet" href="hw6_stylesheet.css"/>
   </head>
 
   <body>
@@ -26,12 +26,15 @@
         <p>Click to add a new shop and parameters</p>
         <button onclick="managerBob.addShop()">Click</button>
         <hr class="separate">
+        <!-- <p>Click to simulate a new day <button onclick="refresh()">Refresh</button></p> -->
       </aside>
 
       <article>
         <header>
           <h2>Table for a randomly generated day</h2>
-          <p>Click to simulate a new day <button onclick="refresh()">Refresh</button></p>
+          <p>Click button to display information in the table</p>
+          <button id="tableButton" onclick="managerBob.generateReport()">Generate Table</button>
+
         </header>
 
         <table>
@@ -43,38 +46,7 @@
               <th>Donuts /Day</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th>Downtown</th>
-              <td id="downtownHours"></td>
-              <td id="downtownDonutsPerHour"></td>
-              <td id="downtownDonutsPerDay"></td>
-            </tr>
-            <tr>
-              <th>Capitol Hill</th>
-              <td id="capitolHillHours"></td>
-              <td id="capitolHillDonutsPerHour"></td>
-              <td id="capitolHillDonutsPerDay"></td>
-            </tr>
-            <tr>
-              <th>South Lake Union</th>
-              <td id="sluHours"></td>
-              <td id="sluDonutsPerHour"></td>
-              <td id="sluDonutsPerDay"></td>
-            </tr>
-            <tr>
-              <th>Wedgewood</th>
-              <td id="wedgewoodHours"></td>
-              <td id="wedgewoodDonutsPerHour"></td>
-              <td id="wedgewoodDonutsPerDay"></td>
-            </tr>
-            <tr>
-              <th>Ballard</th>
-              <td id="ballardHours"></td>
-              <td id="ballardDonutsPerHour"></td>
-              <td id="ballardDonutsPerDay"></td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
         <hr>
 
@@ -91,6 +63,6 @@
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="hw5_script.js"></script>
+    <script src="hw6_script.js"></script>
   </body>
 </html>
