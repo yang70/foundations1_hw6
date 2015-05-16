@@ -17,24 +17,24 @@
       <aside>
         <h3>Extra Features</h3>
         <hr>
-        <p>Click to generate daily report</p>
-        <button onclick="managerBob.generateReport()">Click</button>
+        <p>Click to simulate a new day</p>
+        <button id="refreshButton">Refresh</button>
         <hr class="separate">
         <p>Click to display specific location data</p>
-        <button onclick="displayData()">Click</button>
+        <button id="locationDataButton">Click</button>
         <hr class="separate">
         <p>Click to add a new shop and parameters</p>
-        <button onclick="managerBob.addShop()">Click</button>
+        <button id="addShopButton">Click</button>
         <hr class="separate">
-        <!-- <p>Click to simulate a new day <button onclick="refresh()">Refresh</button></p> -->
       </aside>
 
       <article>
         <header>
           <h2>Table for a randomly generated day</h2>
           <p>Click button to display information in the table</p>
-          <button id="tableButton" onclick="managerBob.generateReport()">Generate Table</button>
+          <button id="tableButton">Generate Table</button>
 
+          <p id="tableFinePrint">* Average donuts per hour is rounded up to display on this table, however it is not rounded until the end for the total donuts per day</p>
         </header>
 
         <table>
@@ -48,11 +48,6 @@
           </thead>
           <tbody></tbody>
         </table>
-        <hr>
-
-        <footer id="articleFooter">
-          <p id="tableFinePrint">* Average donuts per hour is rounded up to display on this table, however it is not rounded until the end for the total donuts per day</p>
-        </footer>
 
       </article>
 
