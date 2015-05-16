@@ -3,7 +3,7 @@
   font-family: Verdana;
 }
 
-div {
+#main {
   width: 1000px;
   height: 250px;
   margin: auto;
@@ -24,7 +24,7 @@ body {
   background-color: #EFEFEF;
 }
 
-img {
+#homer {
   height: auto;
   width: 150px;
   border-radius: 5px;
@@ -159,5 +159,15 @@ footer p {
   margin-right: auto;
 }
 
+#picDiv {
+  width: 10000px;
+}
 
+#donutPic {
+  display: none;
+  position: absolute;
+  width: auto;
+  height: 150px;
+
+}
 

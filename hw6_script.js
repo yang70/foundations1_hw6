@@ -174,6 +174,12 @@ $(function() {
     }
   }
 
+  function animate() {
+    // $("#donutPic").fadeIn();
+    $("#donutPic").css("margin-left", -500).fadeIn().animate({left: "+=2000"}, 4000);
+    // $("#b").animate({left: "-=300"}, 1000);
+  }
+
   //button function calls
   $('#refreshButton').on('click', function() {
       window.history.go(0);
@@ -195,6 +201,10 @@ $(function() {
     }
   );
 
+  $('#animateButton').on('click', function() {
+      animate();
+    }
+  );
 
 
 });
