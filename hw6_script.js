@@ -175,9 +175,7 @@ $(function() {
   }
 
   function animate() {
-    // $("#donutPic").fadeIn();
-    $("#donutPic").css("margin-left", -500).fadeIn().animate({left: "+=2000"}, 4000);
-    // $("#b").animate({left: "-=300"}, 1000);
+    $("#donutPic").css("margin-left", -600).fadeIn().animate({left: "+=2200"}, 4000);
   }
 
   //button function calls
