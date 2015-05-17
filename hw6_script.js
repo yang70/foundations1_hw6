@@ -115,6 +115,9 @@ $(function() {
   var wedgewoodTable = false;
   var ballardTable = false;
 
+  //animate variable
+  var animateCounter = 1;
+
   //print detailed information to the console
   for (var i = 0; i < printArray.length; i++) {
 
@@ -140,7 +143,7 @@ $(function() {
           $("#downtown").append("<td>" + downtown.hoursOpen + "</td>");
           $("#downtown").append("<td>" + downtown.hourlyAverage + "</td>");
           $("#downtown").append("<td>" + downtown.donutsPerDay + "</td>");
-        } else {alert("Downtown already displayed")}
+        } else {alert("Downtown already displayed");}
         $("#downtown").fadeIn();
         downtownTable = true;
       break;
@@ -152,7 +155,7 @@ $(function() {
           $("#capitolHill").append("<td>" + capitolHill.hoursOpen + "</td>");
           $("#capitolHill").append("<td>" + capitolHill.hourlyAverage + "</td>");
           $("#capitolHill").append("<td>" + capitolHill.donutsPerDay + "</td>");
-        } else {alert("Capitol Hill already displayed")}
+        } else {alert("Capitol Hill already displayed");}
         $("#capitolHill").fadeIn();
         capitolHillTable = true;
       break;
@@ -164,7 +167,7 @@ $(function() {
           $("#southLakeUnion").append("<td>" + southLakeUnion.hoursOpen + "</td>");
           $("#southLakeUnion").append("<td>" + southLakeUnion.hourlyAverage + "</td>");
           $("#southLakeUnion").append("<td>" + southLakeUnion.donutsPerDay + "</td>");
-        } else {alert("South Lake Union already displayed")}
+        } else {alert("South Lake Union already displayed");}
         $("#southLakeUnion").fadeIn();
         southLakeUnionTable = true;
       break;
@@ -176,7 +179,7 @@ $(function() {
           $("#wedgewood").append("<td>" + wedgewood.hoursOpen + "</td>");
           $("#wedgewood").append("<td>" + wedgewood.hourlyAverage + "</td>");
           $("#wedgewood").append("<td>" + wedgewood.donutsPerDay + "</td>");
-        } else {alert("Wedgewood already displayed")}
+        } else {alert("Wedgewood already displayed");}
         $("#wedgewood").fadeIn();
         wedgewoodTable = true;
       break;
@@ -188,7 +191,7 @@ $(function() {
           $("#ballard").append("<td>" + ballard.hoursOpen + "</td>");
           $("#ballard").append("<td>" + ballard.hourlyAverage + "</td>");
           $("#ballard").append("<td>" + ballard.donutsPerDay + "</td>");
-        } else {alert("Ballard already displayed")}
+        } else {alert("Ballard already displayed");}
         $("#ballard").fadeIn();
         ballardTable = true;
       break;
@@ -199,7 +202,30 @@ $(function() {
   }
 
   function animate() {
-    $("#donutPic").css("margin-left", -600).fadeIn().animate({left: "+=2200"}, 4000);
+
+    switch(animateCounter) {
+
+      case 1:
+        $("#donutPic").fadeIn("slow").animate({left: "+=3000"}, 4500);
+        $("#donutPic").animate({left: "-800"}, 4500);
+        animateCounter = 2;
+      break;
+
+      case 2:
+        $("#homer").fadeOut().fadeIn().fadeOut().fadeIn();
+        animateCounter = 3;
+      break;
+
+      case 3:
+        $("#homer").effect("shake");
+        $("button").effect("bounce");
+        animateCounter = 1;
+      break;
+
+      default:
+        alert("Error");
+
+    }
   }
 
   //button function calls (I'm sure theres a better way of doing this)
