@@ -57,37 +57,19 @@ $(function() {
     var tableDisplayed = false;
 
     //function to display shop name, donuts per hour and donuts per day
-    this.generateReport = function () {
+    this.generateReport = function (shopLocation) {
 
-      //if-else statement so table is only generated once
-      if (tableDisplayed === false){
+            $("tbody").append("<tr id='" + shopLocation + "'></tr>");
+            $("#" + shopLocation).append("<td>" + shopLocation.location + "</td>");
 
-        //series of for statements to build the table
-        for (var i = 0; i < printArray.length; i++) {
-            $("tbody").append("<tr id='" + i + "'></tr>");
-            $("#" + i).append("<td>" + printArray[i].location + "</td>");
-        }
-        for (var i = 0; i < printArray.length; i++) {
-            $("tbody").append("<tr id='" + i + "'></tr>");
-            $("#" + i).append("<td>" + printArray[i].hoursOpen + "</td>");
-        }
-        for (var i = 0; i < printArray.length; i++) {
-            $("tbody").append("<tr id='" + i + "'></tr>");
-            $("#" + i).append("<td>" + printArray[i].hourlyAverage + "</td>");
-        }
-        for (var i = 0; i < printArray.length; i++) {
-            $("tbody").append("<tr id='" + i + "'></tr>");
-            $("#" + i).append("<td>" + printArray[i].donutsPerDay + "</td>");
-        }
+            $("tbody").append("<tr id='" + shopLocation + "1" + "'></tr>");
+            $("#" + (shopLocation + "1")).append("<td>" + shopLocation.hoursOpen + "</td>");
 
-        //set variable to true to prevent duplicate table generations if button pressed again
-        tableDisplayed = true;
+            $("tbody").append("<tr id='" + shopLocation + "2" + "'></tr>");
+            $("#" + (shopLocation + "2")).append("<td>" + shopLocation.hourlyAverage + "</td>");
 
-        $("table").fadeIn("slow");
-
-      } else {
-        alert("Table already generated");
-      }
+            $("tbody").append("<tr id='" + shopLocation + "3" + "'></tr>");
+            $("#" + (shopLocation + "3")).append("<td>" + shopLocation.donutsPerDay + "</td>");
 
     };
 
@@ -126,6 +108,13 @@ $(function() {
   //create manager object
   var managerBob = new DonutMaster();
 
+  //table display variable
+  var downtownTable = false;
+  var capitolHillTable = false;
+  var southLakeUnionTable = false;
+  var wedgewoodTable = false;
+  var ballardTable = false;
+
   //print detailed information to the console
   for (var i = 0; i < printArray.length; i++) {
 
@@ -139,34 +128,69 @@ $(function() {
   }
 
   //function to display all the data from the simulation.
-  function displayData () {
+  function displayData (shopButton) {
 
     //switch statement to find specific data by location name
-    switch(prompt("Enter a location name to get detailed data.").toLowerCase()) {
+    switch(shopButton) {
 
       case "downtown":
-        alert("Random Customers Generated Per Hour Open: " + downtown.randomCustArray);
-        alert("Donuts sold per hour given an average of " + downtown.donutAverage + " donuts per customer: " + downtown.donutsPerHourArray);
-        break;
+        if (downtownTable === false){
+          $("tbody").append("<tr id='downtown'></tr>");
+          $("#downtown").append("<td>" + downtown.location + "</td>");
+          $("#downtown").append("<td>" + downtown.hoursOpen + "</td>");
+          $("#downtown").append("<td>" + downtown.hourlyAverage + "</td>");
+          $("#downtown").append("<td>" + downtown.donutsPerDay + "</td>");
+        } else {alert("Downtown already displayed")}
+        $("#downtown").fadeIn();
+        downtownTable = true;
+      break;
 
-      case "capitol hill":
-        alert("Random Customers Generated Per Hour Open: " + capitolHill.randomCustArray);
-        alert("Donuts sold per hour given an average of " + capitolHill.donutAverage + " donuts per customer: " + capitolHill.donutsPerHourArray);
-        break;
+      case "capitolHill":
+        if (capitolHillTable === false){
+          $("tbody").append("<tr id='capitolHill'></tr>");
+          $("#capitolHill").append("<td>" + capitolHill.location + "</td>");
+          $("#capitolHill").append("<td>" + capitolHill.hoursOpen + "</td>");
+          $("#capitolHill").append("<td>" + capitolHill.hourlyAverage + "</td>");
+          $("#capitolHill").append("<td>" + capitolHill.donutsPerDay + "</td>");
+        } else {alert("Capitol Hill already displayed")}
+        $("#capitolHill").fadeIn();
+        capitolHillTable = true;
+      break;
 
-      case "south lake union":
-       alert("Random Customers Generated Per Hour Open: " + southLakeUnion.randomCustArray);
-        alert("Donuts sold per hour given an average of " + southLakeUnion.donutAverage + " donuts per customer: " + southLakeUnion.donutsPerHourArray);
-        break;
+      case "southLakeUnion":
+        if (southLakeUnionTable === false){
+          $("tbody").append("<tr id='southLakeUnion'></tr>");
+          $("#southLakeUnion").append("<td>" + southLakeUnion.location + "</td>");
+          $("#southLakeUnion").append("<td>" + southLakeUnion.hoursOpen + "</td>");
+          $("#southLakeUnion").append("<td>" + southLakeUnion.hourlyAverage + "</td>");
+          $("#southLakeUnion").append("<td>" + southLakeUnion.donutsPerDay + "</td>");
+        } else {alert("South Lake Union already displayed")}
+        $("#southLakeUnion").fadeIn();
+        southLakeUnionTable = true;
+      break;
 
       case "wedgewood":
-        alert("Random Customers Generated Per Hour Open: " + wedgewood.randomCustArray);
-       alert("Donuts sold per hour given an average of " + wedgewood.donutAverage + " donuts per customer: " + wedgewood.donutsPerHourArray);
-        break;
+        if (wedgewoodTable === false){
+          $("tbody").append("<tr id='wedgewood'></tr>");
+          $("#wedgewood").append("<td>" + wedgewood.location + "</td>");
+          $("#wedgewood").append("<td>" + wedgewood.hoursOpen + "</td>");
+          $("#wedgewood").append("<td>" + wedgewood.hourlyAverage + "</td>");
+          $("#wedgewood").append("<td>" + wedgewood.donutsPerDay + "</td>");
+        } else {alert("Wedgewood already displayed")}
+        $("#wedgewood").fadeIn();
+        wedgewoodTable = true;
+      break;
 
       case "ballard":
-        alert("Random Customers Generated Per Hour Open: " + ballard.randomCustArray);
-        alert("Donuts sold per hour given an average of " + ballard.donutAverage + " donuts per customer: " + ballard.donutsPerHourArray);
+        if (ballardTable === false){
+          $("tbody").append("<tr id='ballard'></tr>");
+          $("#ballard").append("<td>" + ballard.location + "</td>");
+          $("#ballard").append("<td>" + ballard.hoursOpen + "</td>");
+          $("#ballard").append("<td>" + ballard.hourlyAverage + "</td>");
+          $("#ballard").append("<td>" + ballard.donutsPerDay + "</td>");
+        } else {alert("Ballard already displayed")}
+        $("#ballard").fadeIn();
+        ballardTable = true;
       break;
 
       default:
@@ -178,14 +202,9 @@ $(function() {
     $("#donutPic").css("margin-left", -600).fadeIn().animate({left: "+=2200"}, 4000);
   }
 
-  //button function calls
+  //button function calls (I'm sure theres a better way of doing this)
   $('#refreshButton').on('click', function() {
       window.history.go(0);
-    }
-  );
-
-  $('#locationDataButton').on('click', function() {
-      displayData();
     }
   );
 
@@ -204,5 +223,30 @@ $(function() {
     }
   );
 
+  //nav button
+  $('#downtownButton').on('click', function() {
+      displayData("downtown");
+    }
+  );
+
+  $('#capitolHillButton').on('click', function() {
+      displayData("capitolHill");
+    }
+  );
+
+  $('#sluButton').on('click', function() {
+      displayData("southLakeUnion");
+    }
+  );
+
+  $('#wedgewoodButton').on('click', function() {
+      displayData("wedgewood");
+    }
+  );
+
+  $('#ballardButton').on('click', function() {
+      displayData("ballard");
+    }
+  );
 
 });

@@ -82,7 +82,7 @@ td {
 table {
   margin: 20px auto 20px auto;
   table-layout: fixed;
-  display: none;
+  /*display: none;*/
 }
 
 thead tr th {
@@ -190,4 +190,8 @@ footer p {
   margin: auto;
   height: 35px;
   padding-top: 0px;
+}
+
+#downtown, #capitolHill, #southLakeUnion, #wedgewood, #ballard {
+  display: none;
 }

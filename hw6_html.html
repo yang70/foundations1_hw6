@@ -20,9 +20,6 @@
         <p>Click to simulate a new day</p>
         <button id="refreshButton">Refresh</button>
         <hr class="separate">
-        <p>Click to display specific location data</p>
-        <button id="locationDataButton">Click</button>
-        <hr class="separate">
         <p>Click to add a new shop and parameters</p>
         <button id="addShopButton">Click</button>
         <hr class="separate">
@@ -34,23 +31,16 @@
 
         <header>
           <h2>Click on a shop location to display detailed data</h2>
+          <p id="tableFinePrint">* Average donuts per hour is rounded up to display on this table, however it is not rounded until the end for the total donuts per day</p>
         </header>
 
         <nav id="locationList">
-          <button class="navButton">Downton</button>
-          <button class="navButton">Capitol Hill</button>
-          <button class="navButton">South Lake Union</button>
-          <button class="navButton">Wedgewood</button>
-          <button class="navButton">Ballard</button>
+          <button class="navButton" id="downtownButton">Downtown</button>
+          <button class="navButton" id="capitolHillButton">Capitol Hill</button>
+          <button class="navButton" id="sluButton">South Lake Union</button>
+          <button class="navButton" id="wedgewoodButton">Wedgewood</button>
+          <button class="navButton" id="ballardButton">Ballard</button>
         </nav>
-
-        <!-- <header>
-          <h2>Table for a randomly generated day</h2>
-          <p>Click button to display information in the table</p>
-          <button id="tableButton">Generate Table</button>
-
-          <p id="tableFinePrint">* Average donuts per hour is rounded up to display on this table, however it is not rounded until the end for the total donuts per day</p>
-        </header> -->
 
         <table>
           <thead>
