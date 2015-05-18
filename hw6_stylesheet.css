@@ -120,6 +120,7 @@ button {
   margin-right: auto;
   border-radius: 5px;
   padding: auto;
+  width: 100px;
 }
 
 div > footer {
@@ -172,7 +173,6 @@ footer p {
   width: auto;
   height: 150px;
   margin-left: -500px;
-
 }
 
 .navButton {
@@ -205,4 +205,8 @@ footer p {
   width: 120px;
   margin: auto;
   display: block;
+}
+
+#refreshButton {
+  text-align: center;
 }

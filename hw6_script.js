@@ -124,9 +124,11 @@ $(function() {
           $("#downtown").append("<td>" + downtown.hoursOpen + "</td>");
           $("#downtown").append("<td>" + downtown.hourlyAverage + "</td>");
           $("#downtown").append("<td>" + downtown.donutsPerDay + "</td>");
-        } else {alert("Downtown already displayed");}
-        $("#downtown").fadeIn();
-        downtownTable = true;
+          $("#downtown").fadeIn();
+          downtownTable = true;
+        } else {$("#downtown").toggle("explode");}
+
+
       break;
 
       case "capitolHill":
@@ -136,9 +138,9 @@ $(function() {
           $("#capitolHill").append("<td>" + capitolHill.hoursOpen + "</td>");
           $("#capitolHill").append("<td>" + capitolHill.hourlyAverage + "</td>");
           $("#capitolHill").append("<td>" + capitolHill.donutsPerDay + "</td>");
-        } else {alert("Capitol Hill already displayed");}
-        $("#capitolHill").fadeIn();
-        capitolHillTable = true;
+          $("#capitolHill").fadeIn();
+          capitolHillTable = true;
+        } else {$("#capitolHill").fadeToggle();}
       break;
 
       case "southLakeUnion":
@@ -148,9 +150,9 @@ $(function() {
           $("#southLakeUnion").append("<td>" + southLakeUnion.hoursOpen + "</td>");
           $("#southLakeUnion").append("<td>" + southLakeUnion.hourlyAverage + "</td>");
           $("#southLakeUnion").append("<td>" + southLakeUnion.donutsPerDay + "</td>");
-        } else {alert("South Lake Union already displayed");}
-        $("#southLakeUnion").fadeIn();
-        southLakeUnionTable = true;
+          $("#southLakeUnion").fadeIn();
+          southLakeUnionTable = true;
+        } else {$("#southLakeUnion").toggle("explode");}
       break;
 
       case "wedgewood":
@@ -160,9 +162,9 @@ $(function() {
           $("#wedgewood").append("<td>" + wedgewood.hoursOpen + "</td>");
           $("#wedgewood").append("<td>" + wedgewood.hourlyAverage + "</td>");
           $("#wedgewood").append("<td>" + wedgewood.donutsPerDay + "</td>");
-        } else {alert("Wedgewood already displayed");}
-        $("#wedgewood").fadeIn();
-        wedgewoodTable = true;
+          $("#wedgewood").fadeIn();
+          wedgewoodTable = true;
+        } else {$("#wedgewood").fadeToggle();}
       break;
 
       case "ballard":
@@ -172,9 +174,9 @@ $(function() {
           $("#ballard").append("<td>" + ballard.hoursOpen + "</td>");
           $("#ballard").append("<td>" + ballard.hourlyAverage + "</td>");
           $("#ballard").append("<td>" + ballard.donutsPerDay + "</td>");
-        } else {alert("Ballard already displayed");}
-        $("#ballard").fadeIn();
-        ballardTable = true;
+          $("#ballard").fadeIn();
+          ballardTable = true;
+        } else {$("#ballard").toggle("explode");}
       break;
 
       default:
