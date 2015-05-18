@@ -52,7 +52,7 @@ h3 {
 
 article {
   width: 79%;
-  height: 500px;
+  height: 480px;
   background-color: #A3D39C;
   margin-left: 0px;
   margin-right: auto;
@@ -82,7 +82,6 @@ td {
 table {
   margin: 20px auto 20px auto;
   table-layout: fixed;
-  /*display: none;*/
 }
 
 thead tr th {
@@ -100,7 +99,7 @@ tr {
 
 aside {
   width: 20%;
-  height: 500px;
+  height: 480px;
   background-color: #424242;
   float: left;
   border-radius: 5px;
@@ -195,4 +194,15 @@ footer p {
 
 #downtown, #capitolHill, #southLakeUnion, #wedgewood, #ballard {
   display: none;
+}
+
+#animateButton {
+  font-weight: bold;
+}
+
+#donutPlate {
+  height: auto;
+  width: 120px;
+  margin: auto;
+  display: block;
 }

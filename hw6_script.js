@@ -53,25 +53,6 @@ $(function() {
   function DonutMaster() {
 
     var managerName = name;
-    //variable to indicate if table has been generated yet
-    var tableDisplayed = false;
-
-    //function to display shop name, donuts per hour and donuts per day
-    this.generateReport = function (shopLocation) {
-
-            $("tbody").append("<tr id='" + shopLocation + "'></tr>");
-            $("#" + shopLocation).append("<td>" + shopLocation.location + "</td>");
-
-            $("tbody").append("<tr id='" + shopLocation + "1" + "'></tr>");
-            $("#" + (shopLocation + "1")).append("<td>" + shopLocation.hoursOpen + "</td>");
-
-            $("tbody").append("<tr id='" + shopLocation + "2" + "'></tr>");
-            $("#" + (shopLocation + "2")).append("<td>" + shopLocation.hourlyAverage + "</td>");
-
-            $("tbody").append("<tr id='" + shopLocation + "3" + "'></tr>");
-            $("#" + (shopLocation + "3")).append("<td>" + shopLocation.donutsPerDay + "</td>");
-
-    };
 
     //method to add a new shop to the current list of shops and their parameters.  This is LOCAL ONLY, does not change values in the rest of the script
     this.addShop = function(){
@@ -115,7 +96,7 @@ $(function() {
   var wedgewoodTable = false;
   var ballardTable = false;
 
-  //animate variable
+  //animate counter
   var animateCounter = 1;
 
   //print detailed information to the console
@@ -201,6 +182,7 @@ $(function() {
     }
   }
 
+  //function to do 3 different animations on a cycle
   function animate() {
 
     switch(animateCounter) {
@@ -213,12 +195,14 @@ $(function() {
 
       case 2:
         $("#homer").fadeOut().fadeIn().fadeOut().fadeIn();
+        $("#donutPlate").fadeOut().fadeIn().fadeOut().fadeIn();
         animateCounter = 3;
       break;
 
       case 3:
         $("#homer").effect("shake");
         $("button").effect("bounce");
+        $("#donutPlate").effect("explode").delay(1000).fadeIn();
         animateCounter = 1;
       break;
 
@@ -239,17 +223,12 @@ $(function() {
     }
   );
 
-  $('#tableButton').on('click', function() {
-      managerBob.generateReport();
-    }
-  );
-
   $('#animateButton').on('click', function() {
       animate();
     }
   );
 
-  //nav button
+  //nav buttons
   $('#downtownButton').on('click', function() {
       displayData("downtown");
     }
